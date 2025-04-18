@@ -1016,4 +1016,57 @@ header .seperator-skew svg .fill-white {
   .footer .footer-flex .footer-icon-links a {
     margin: 0 1rem;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+.floating-navbar-wrapper {
+  position: fixed;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: max-content;
+}
+
+.floating-navbar {
+  position: static;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  border-radius: 2rem;
+  padding: 0.5rem 2.5rem;
+  z-index: 1000;
+  width: max-content; /* Ensures it only takes as much space as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.floating-navbar ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.floating-navbar .nav-link {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #222;
+  padding: 0.5rem 1.2rem;
+  border-radius: 1.5rem;
+  transition: background 0.3s, color 0.3s;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.floating-navbar .nav-link.active,
+.floating-navbar .nav-link:hover {
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(37,99,235,0.15);
+}
