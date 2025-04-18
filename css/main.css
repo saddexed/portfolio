@@ -1071,3 +1071,19 @@ header .seperator-skew svg .fill-white {
   color: #fff;
   box-shadow: 0 2px 12px rgba(37,99,235,0.15);
 }
+
+@media (max-width: 860px) {
+  .floating-navbar-wrapper {
+    display: none !important;
+  }
+  /* Optionally, show your mobile menu if hidden */
+  .mobile-menu {
+    display: block !important;
+  }
+}
+
+@media (min-width: 861px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
