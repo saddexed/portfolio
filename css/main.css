@@ -490,6 +490,8 @@ header .socials ul li {
   font-size: 1.5rem;
   width: 100%;
   height: 100%;
+  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 1rem;  
 }
 header .socials ul li a {
   text-align: right;
