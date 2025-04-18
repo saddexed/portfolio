@@ -475,6 +475,7 @@ header .socials {
   bottom: 40%;
   left: -125px;
   z-index: 10;
+  border-radius: 2rem;
 }
 header .socials ul {
   display: flex;
