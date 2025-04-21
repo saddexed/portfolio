@@ -52,8 +52,8 @@
         <div class="container nav-container">
           <a href="index.html" id="logo">
             <!-- LOGO IMAGE 
-            <img src="img/logo.png" alt="logo">
             -->
+            <img src="img/logo.png" alt="logo">
           </a>
         </div>
 
@@ -260,7 +260,7 @@
               <i class="fab fa-github"></i> 
               Code
             </a>
-            <a href="" class="btn-blue btn-small" target="_blank">
+            <a href="#recursion" class="btn-blue btn-small" target="_blank">
               <i class="fas fa-external-link-alt"></i> 
               Live
             </a>
@@ -269,29 +269,25 @@
       </div>
       <div class="project-row" data-aos="fade-up">
         <div class="project-left">
-          <img src="img/euphorus-backend.png" alt="">
+          <img src="img/weather.png" alt="">
         </div>
         <div class="project-right">
-          <h3>Blank</h3>
+          <h3>Weather App</h3>
           <ul class="tech-stack-list">
             <p class="text-grey"><b>Made with: </b></p>
+            <li><span class="iconify" data-icon="logos:html-5" data-inline="false"></span></li>
             <li><span class="iconify" data-icon="logos:javascript" data-inline="false"></span></li>
             <li><span class="iconify" data-icon="logos:nodejs" data-inline="false"></span></li>
-            <li><span class="iconify" data-icon="logos:swagger" data-inline="false" data-width="30"
-                data-height="30"></span></li>
-            <li><span class="iconify" data-icon="logos:express" data-inline="false"></span></li>
-            <li><span class="iconify" data-icon="cib:mysql" data-inline="false" data-width="30" data-height="30"></span>
-            </li>
-            <li><span class="iconify" data-icon="logos:knex" data-inline="false"></span></li>
+            <li><span class="iconify" data-icon="logos:github-copilot" data-inline="false"></span></li>
           </ul>
           <p>
-            [Text here]
+            Weather app that uses OpenWeather API to get the current weather and forecast for the next 5 days. Built with HTML, CSS, JS and NodeJS. Hosted on GitHub Pages.
           </p>
           <div class="project-links">
-            <a href="" class="btn-blue btn-small" target="_blank"> <i
+            <a href="https://github.com/saddexed/Weather-App" class="btn-blue-outline btn-small mx-1"
+            target="_blank"> <i class="fab fa-github"></i> Code</a>
+            <a href="https://saddexed.github.io/Weather-App/" class="btn-blue btn-small" target="_blank"> <i
                 class="fas fa-external-link-alt"></i> Live</a>
-            <a href="" class="btn-blue-outline btn-small mx-1"
-              target="_blank"> <i class="fab fa-github"></i> Code</a>
           </div>
         </div>
       </div>
@@ -448,13 +444,13 @@
   <footer id="footer" class="footer">
     <div class="container">
       <div class="footer-flex">
-        <img src="/img/logo.png" alt="logo" id="logo-footer">
+        <img src="img/logo.png" alt="logo" id="logo-footer">
 
         <div class="footer-icon-links">
-          <a href="https://github.com/ben04rogers" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-          <a href="https://www.linkedin.com/in/ben-rogers-a3b013140/" target="_blank"><i
+          <a href="https://github.com/saddexed" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+          <a href="https://www.linkedin.com/in/shawndex/" target="_blank"><i
               class="fab fa-linkedin fa-2x"></i></a>
-          <a href="mailto:benrogers1299@outlook.com"><i class="fas fa-envelope fa-2x"></i></a>
+          <a href="mailto:seta5869@gmail.com"><i class="fas fa-envelope fa-2x"></i></a>
         </div>
       </div>
     </div>
@@ -492,13 +488,20 @@
     particlesJS.load()
   </script>
 
-  <script defer src="js/app.js"></script>
+  <script defer src="js/app.js">
+  </script>
 
   <!-- AOS Animations -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
+    if (window.location.href.includes("#recursion")) {
+      console.log("Recursion detected!");
+      alert("That's recursion!");
+    }
   </script>
+
+  
 
 </body>
 
