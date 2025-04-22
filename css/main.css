@@ -384,7 +384,7 @@ header nav .nav-container .nav-links li {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 2rem;
+  margin-left: 0rem;
 }
 header nav .nav-container .nav-links a {
   text-decoration: none;
@@ -469,6 +469,21 @@ header .hero .hero-btns {
   white-space: nowrap;
   text-align: center;
   margin-top: 1rem;
+}
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem; /* Adjust spacing as needed *
+  padding: 1rem; */
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-btns a {
+  flex: 1 1 100px;
+  min-width: 100px; /* Prevents buttons from getting too small */
+  max-width: 220px;
+  text-align: center;
 }
 header .socials {
   position: absolute;
@@ -699,61 +714,71 @@ header .seperator-skew svg .fill-white {
   }
 }
 .education {
-  background: white;
-  padding-bottom: 3rem;
+  background: #fff;
+  padding: 3rem 0;
 }
 .education .container {
-  max-width: 900px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
-.education .container h2 {
+.education h2 {
   text-align: center;
-  color: black;
-  margin-bottom: 3rem;
+  color: #222;
+  margin-bottom: 2rem;
+  font-weight: bold;
 }
-.education .container .education-card {
+.education-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.education-card {
+  background: #f6f8fa;
+  border-radius: 12px;
+  box-shadow: 0 0.15rem 0.6rem rgba(43, 52, 56, 0.10);
+  padding: 2rem 1.5rem;
+  min-width: 260px;
+  max-width: 340px;
+  flex: 1 1 300px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 0.15rem 0.6rem rgba(43, 52, 56, 0.15);
-  padding: 40px;
-  border-radius: 3px;
+  margin-bottom: 1rem;
+  transition: transform 0.2s;
 }
-.education .container .education-card > *:last-child {
-  margin-top: 40px;
+.education-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0.3rem 1.2rem rgba(43, 52, 56, 0.15);
 }
-@media (max-width: 500px) {
-  .education .container .education-card {
-    padding: 20px;
+.education-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #222;
+}
+.education-card .text-grey {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+.education-card ul {
+  padding-left: 1.2rem;
+  margin-bottom: 0;
+}
+.education-card ul li {
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 0.98rem;
+}
+@media (max-width: 700px) {
+  .education-list {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .education-card {
+    width: 100%;
+    max-width: 95vw;
   }
 }
-.education .container .education-card .education-card-column {
-  display: flex;
-}
-.education .container .education-card .education-card-column .card-column-image {
-  flex: 0 0 20%;
-}
-.education .container .education-card .education-card-column .card-column-image img {
-  width: 100%;
-}
-.education .container .education-card .education-card-column .card-column-large {
-  flex: 0 0 80%;
-  padding-left: 1.5rem;
-}
-.education .container .education-card .education-card-column .card-column-large > * {
-  margin: 0.25rem 0;
-}
-.education .container .education-card .education-card-column .card-column-large h4 {
-  font-weight: normal;
-}
-.education .container .education-card .education-card-column .card-column-large ul {
-  padding-left: 1.5rem;
-}
-.education .container .education-card .education-card-column .card-column-large hr {
-  border: 0;
-  border-top: 1px solid #eee;
-  margin-top: 40px;
-}
-
 .skills {
   padding: 3rem 0;
   position: relative;
@@ -1023,7 +1048,7 @@ header .seperator-skew svg .fill-white {
 
 .floating-navbar-wrapper {
   position: fixed;
-  top: 32px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -1088,4 +1113,94 @@ header .seperator-skew svg .fill-white {
   .mobile-menu {
     display: none !important;
   }
+}
+.experiences {
+  background: #fff;
+  padding: 3rem 0;
+}
+.experiences h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+.experience-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.experience-card {
+  background: #f6f8fa;
+  border-radius: 12px;
+  box-shadow: 0 0.15rem 0.6rem rgba(43, 52, 56, 0.10);
+  padding: 2rem 1.5rem;
+  min-width: 260px;
+  max-width: 340px;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  transition: transform 0.2s;
+}
+.experience-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0.3rem 1.2rem rgba(43, 52, 56, 0.15);
+}
+.experience-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #222;
+}
+.experience-card .text-grey {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+.experience-card ul {
+  padding-left: 1.2rem;
+  margin-bottom: 0;
+}
+.experience-card ul li {
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 0.98rem;
+}
+@media (max-width: 700px) {
+  .experience-list {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .experience-card {
+    width: 100%;
+    max-width: 95vw;
+  }
+}
+
+.card-header-flex {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.card-duration {
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.35em 1em;
+  border-radius: 1.2em;
+  box-shadow: 0 1px 6px rgba(37,99,235,0.08);
+  letter-spacing: 0.03em;
+  /* margin-right: auto; */
+}
+.nav-container {
+  width: auto !important;
+  margin: 0 !important;
+  padding: 10px !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
