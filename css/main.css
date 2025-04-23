@@ -1050,7 +1050,6 @@ header .seperator-skew svg .fill-white {
   position: fixed;
   top: 10px;
   left: 50%;
-  transform: translateX(-50%);
   z-index: 1000;
   width: max-content;
 }
@@ -1058,7 +1057,6 @@ header .seperator-skew svg .fill-white {
 .floating-navbar {
   position: static;
   top: 32px;
-  left: 50%;
   transform: translateX(-50%);
   background: rgba(255,255,255,0.95);
   box-shadow: 0 8px 32px rgba(0,0,0,0.15);
@@ -1074,7 +1072,7 @@ header .seperator-skew svg .fill-white {
 
 .floating-navbar ul {
   display: flex;
-  gap: 2rem;
+  gap: 2px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1087,16 +1085,22 @@ header .seperator-skew svg .fill-white {
   color: #222;
   padding: 0.5rem 1.2rem;
   border-radius: 1.5rem;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.4s cubic-bezier(.4,0,.2,1), color 0.4s cubic-bezier(.4,0,.2,1), box-shadow 0.4s cubic-bezier(.4,0,.2,1);
   text-decoration: none;
   font-size: 1.1rem;
 }
 
-.floating-navbar .nav-link.active,
-.floating-navbar .nav-link:hover {
+.floating-navbar .nav-link.active {
   background: #2563eb;
   color: #fff;
   box-shadow: 0 2px 12px rgba(37,99,235,0.15);
+}
+
+.floating-navbar .nav-link:hover {
+  background: #4a84ff;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(37,99,235,0.15);
+  
 }
 
 @media (max-width: 860px) {
@@ -1114,11 +1118,11 @@ header .seperator-skew svg .fill-white {
     display: none !important;
   }
 }
-.experiences {
+.experience {
   background: #fff;
   padding: 3rem 0;
 }
-.experiences h2 {
+.experience h2 {
   text-align: center;
   margin-bottom: 2rem;
   font-weight: bold;
@@ -1203,4 +1207,150 @@ header .seperator-skew svg .fill-white {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+.accomplishments {
+  background: #f9fafe;
+  padding: 4rem 0 3rem 0;
+}
+.accomplishments h2,
+.accomplishments h2 span {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+.accomplishments .timeline {
+  position: relative;
+  margin: 3rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px; /* or your preferred width */
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  background: #f6f8fa;
+  border-radius: 16px;
+  box-shadow: 0 0.15rem 0.6rem rgba(43, 52, 56, 0.10);
+  padding: 2rem 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.timeline-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0.3rem 1.2rem rgba(43, 52, 56, 0.15), 0 0 0 4px #2563eb22;
+  background: #fff;
+}
+
+.timeline-date {
+  min-width: 150px; /* Increased width */
+  max-width: 200px;
+  text-align: right;
+  font-weight: 600;
+  color: #2563eb;
+  font-size: 1.1rem;
+  margin-right: 32px;
+  flex-shrink: 0;
+  opacity: 0.85;
+  transition: color 0.3s;
+  word-break: break-word;
+}
+/*
+god blast using this atp
+
+.accomplishments .timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #e3e8f0;
+  border-radius: 2px;
+  z-index: 0;
+  pointer-events: none;
+}
+*/
+.timeline-pipe {
+  width: 4px;
+  height: 100px;
+  background: #e3e8f0;
+  border-radius: 2px;
+  margin-right: 32px;
+  margin-left: 0;
+  position: relative;
+  z-index: 1;
+  /* Overlap with ::before for seamless look */
+}
+
+.timeline-img {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border: 3px solid #2563eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 32px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+  position: relative;
+}
+
+.timeline-img img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.timeline-content {
+  min-width: 250px;
+  flex: 1;
+  border-radius: 0;
+}
+.timeline-content a {
+  min-width: 250px;
+  color: #333;
+  transition: box-shadow 0.3s, background 0.3s;
+  text-decoration: underline;
+  font-weight: bolder;
+  font-style: italic;
+  flex: 1;
+}
+
+
+@media (max-width: 900px) {
+  .accomplishments .timeline {
+    max-width: 100%;
+  }
+  .timeline-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+  }
+  .timeline-date, .timeline-pipe, .timeline-img {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .timeline-pipe {
+    display:none;
+  }
+  .timeline-content {
+    min-width: 0;
+    width: 100%;
+    text-align: left;
+  }
+
 }
