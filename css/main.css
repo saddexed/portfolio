@@ -1209,17 +1209,17 @@ header .seperator-skew svg .fill-white {
   justify-content: flex-start;
 }
 
-.accomplishments {
+.achievements {
   background: #f9fafe;
   padding: 4rem 0 3rem 0;
 }
-.accomplishments h2,
-.accomplishments h2 span {
+.achievements h2,
+.achievements h2 span {
   text-align: center;
   margin-bottom: 3rem;
   font-weight: bold;
 }
-.accomplishments .timeline {
+.achievements .timeline {
   position: relative;
   margin: 3rem auto 0 auto;
   display: flex;
@@ -1265,7 +1265,7 @@ header .seperator-skew svg .fill-white {
 /*
 god blast using this atp
 
-.accomplishments .timeline::before {
+.achievements .timeline::before {
   content: '';
   position: absolute;
   left: 50%;
@@ -1330,7 +1330,7 @@ god blast using this atp
 
 
 @media (max-width: 900px) {
-  .accomplishments .timeline {
+  .achievements .timeline {
     max-width: 100%;
   }
   .timeline-item {
